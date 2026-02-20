@@ -7,7 +7,7 @@ const Topbar = () => {
       <div className="nav-links">
         <a href="#profile">About</a>
         <a href="#work">Projects</a>
-        <a href="#curriculum">Resume</a>
+        {/* <a href="#curriculum">Resume</a> */}
         <a href="#connect">Contact</a>
       </div>
     </nav>

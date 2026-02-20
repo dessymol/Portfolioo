@@ -15,8 +15,9 @@ const Introduction = () => {
           </p>
 
           <div className="buttons">
-            <a href="#curriculum" className="primary-btn">
-              View Resume
+            <a href="https://www.linkedin.com/in/dessymol-dixon-a56141263" 
+        target="_blank"className="secondary-btn" >
+             Linkedin
             </a>
             <a href="#connect" className="secondary-btn">
               Contact

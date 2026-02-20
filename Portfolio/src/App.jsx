@@ -15,7 +15,7 @@ function App() {
       <Profile />
       <Expertise />
       <Work />
-      <Curriculum />
+      {/* <Curriculum /> */}
       <Connect />
       <Topbar/>
     </div>

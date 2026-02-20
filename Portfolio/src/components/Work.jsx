@@ -19,6 +19,12 @@ const Work = () => {
           <p><strong>Tech:</strong> MERN Stack</p>
           <a href="https://github.com/dessymol/Blog-App.git" target="_blank">GitHub</a>
         </div>
+         <div className="card">
+          <h3>City central Library</h3>
+          <p>HTML bsaed library UI designing.</p>
+          <p><strong>Tech:</strong>HTML</p>
+          <a href="https://github.com/dessymol/City-Central-Library.git" target="_blank">GitHub</a>
+        </div>
       </div>
     </section>
   );

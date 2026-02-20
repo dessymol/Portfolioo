@@ -12,6 +12,7 @@ const Expertise = () => {
           <p>HTML5</p>
           <p>CSS3</p>
           <p>JavaScript (ES6)</p>
+          <p>C#</p>
         </div>
 
         <div className="card">
@@ -23,6 +24,7 @@ const Expertise = () => {
         <div className="card">
           <h3>Database</h3>
           <p>MongoDB</p>
+          <p>My SQl</p>
         </div>
 
         <div className="card">
@@ -30,6 +32,7 @@ const Expertise = () => {
           <p>Git & GitHub</p>
           <p>Postman</p>
           <p>VS Code</p>
+          <p>Unity</p>
         </div>
       </div>
     </section>

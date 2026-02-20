@@ -20,10 +20,10 @@ const ContactSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!/^[A-Za-z\s]+$/.test(form.name)) {
-      setError("Name should contain only letters");
-      return;
-    }
+    if (!/^[A-Za-z\s.'-]{2,50}$/.test(form.name)) {
+  setError("Please enter a valid name");
+  return;
+}
 
     if (!/\S+@\S+\.\S+/.test(form.email)) {
       setError("Enter valid email address");
@@ -56,43 +56,73 @@ const ContactSection = () => {
 
   return (
     <section style={styles.section} id="connect">
-      <div style={styles.card}>
-        <h2 style={styles.heading}>Contact Me</h2>
-        <form onSubmit={handleSubmit} style={styles.form}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={form.name}
-            onChange={handleChange}
-            style={styles.input}
-          />
+  <div style={styles.container}>
+    
+    {/* LEFT SIDE */}
+    <div style={styles.infoCard}>
+      <h3 style={styles.infoTitle}>Email</h3>
+      <p>dessymol@example.com</p>
 
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={form.email}
-            onChange={handleChange}
-            style={styles.input}
-          />
+      <h3 style={styles.infoTitle}>Linkedin</h3>
+      <a 
+        href="https://www.linkedin.com/in/dessymol-dixon-a56141263" 
+        target="_blank" 
+        rel="noopener noreferrer"
+       style={styles.infoLink}
+       >
+       dessylinkedin.com
+      </a>
 
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            value={form.message}
-            onChange={handleChange}
-            style={styles.textarea}
-          ></textarea>
+      <h3 style={styles.infoTitle}>Location</h3>
+      <p>Kerala, India</p>
 
-          <button type="submit" style={styles.button}>
-            Send Message
-          </button>
-           {error && <p style={styles.error}>{error}</p>}
-           {success && <p style={styles.success}>{success}</p>}
-        </form>
-      </div>
-    </section>
+      <h3 style={styles.infoTitle}>Phone</h3>
+      <p>+91 8714585458</p>
+    </div>
+
+    {/* RIGHT SIDE */}
+    <div style={styles.formCard}>
+      <h2 style={styles.heading}>Get In Touch</h2>
+
+      <form onSubmit={handleSubmit} style={styles.form}>
+        <input
+          type="text"
+          name="name"
+          placeholder="Your Name"
+          value={form.name}
+          onChange={handleChange}
+          style={styles.input}
+        />
+
+        <input
+          type="email"
+          name="email"
+          placeholder="Your Email"
+          value={form.email}
+          onChange={handleChange}
+          style={styles.input}
+        />
+
+        <textarea
+          name="message"
+          placeholder="Your Message"
+          value={form.message}
+          onChange={handleChange}
+          style={styles.textarea}
+        />
+
+        <button type="submit" style={styles.button}>
+          Send Message
+        </button>
+
+        {error && <p style={styles.error}>{error}</p>}
+        {success && <p style={styles.success}>{success}</p>}
+      </form>
+    </div>
+
+  </div>
+</section>
+
   );
 };
 
@@ -158,6 +188,44 @@ success: {
   fontSize: "14px",
   textAlign: "center",
 },
+container: {
+  display: "flex",
+  gap: "40px",
+  maxWidth: "1100px",
+  width: "100%",
+  flexWrap: "wrap",
+},
+
+infoCard: {
+  flex: "1",
+  minWidth: "280px",
+  backgroundColor: "#ffffff",
+  padding: "40px",
+  borderRadius: "16px",
+  boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
+},
+
+formCard: {
+  flex: "2",
+  minWidth: "320px",
+  backgroundColor: "#ffffff",
+  padding: "40px",
+  borderRadius: "16px",
+  boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
+},
+
+infoTitle: {
+  marginTop: "20px",
+  marginBottom: "5px",
+  color: "#1E293B",
+},
+infoLink: {
+  color: "#2563EB",
+  textDecoration: "none",
+  fontWeight: "500",
+},
+
+
 
 };
 
