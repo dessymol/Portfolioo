@@ -3,10 +3,10 @@ import Introduction from "./components/Introduction";
 import Profile from "./components/Profile";
 import Expertise from "./components/Expertise";
 import Work from "./components/Work";
-import Curriculum from "./components/Curriculum";
 import Connect from "./components/Connect";
 import "./App.css";
 import Topbar from "./components/Topbar";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -15,9 +15,9 @@ function App() {
       <Profile />
       <Expertise />
       <Work />
-      {/* <Curriculum /> */}
       <Connect />
-      <Topbar/>
+      <Footer />
+      <Topbar />
     </div>
   );
 }

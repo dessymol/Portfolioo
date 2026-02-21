@@ -1,10 +1,10 @@
 import React from "react";
+import { FaAward, FaFileAlt, FaGamepad, FaGraduationCap, FaLinkedin, FaReact, FaSchool } from "react-icons/fa";
 
 const certificates = [
   {
     title: "Full-Stack Web Developer LinkedIn Learning Course",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5awh5wQuZfpmwuwVXE-jIq607mEcAP9X0CA&s",
+    icon: FaLinkedin,
     links: [
       {
         label: "LinkedIn Certificate",
@@ -18,8 +18,7 @@ const certificates = [
   },
   {
     title: "Google Docs Essential Training LinkedIn Learning Course",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5awh5wQuZfpmwuwVXE-jIq607mEcAP9X0CA&s",
+    icon: FaFileAlt,
     links: [
       {
         label: "LinkedIn Certificate",
@@ -33,8 +32,7 @@ const certificates = [
   },
   {
     title: "React Essential Training LinkedIn Learning Course",
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5awh5wQuZfpmwuwVXE-jIq607mEcAP9X0CA&s",
+    icon: FaReact,
     links: [
       {
         label: "LinkedIn Certificate",
@@ -62,40 +60,76 @@ const Profile = () => {
       </p>
 
       <div className="profile-layout">
-        <div className="card">
-          <h3>Education</h3><br/>
-           <p>+2</p>
-          <p>Computer science</p>
-          <p>GHSS Attingal</p><br/>
-          <p>BCA</p>
-          <p>UIT COLLEGE VAKKOM</p>
-          <p>2020 - 2023</p><br/>
-          <p>Unity Engine</p>
-         <p>C# Scripting</p>
-         <p>2D & 3D Game Mechanics</p>
-         <p>Physics & Animation Systems</p>
-         
+        <div className="card education-card">
+          <h3>Education</h3>
+
+          <div className="education-timeline">
+            <article className="education-item">
+              <div className="education-icon-box" aria-hidden="true">
+                <FaSchool className="education-icon" />
+              </div>
+              <div className="education-content">
+                <p className="education-degree">+2 Computer Science</p>
+                <p className="education-school">GHSS Attingal</p>
+              </div>
+            </article>
+
+            <article className="education-item">
+              <div className="education-icon-box" aria-hidden="true">
+                <FaGraduationCap className="education-icon" />
+              </div>
+              <div className="education-content">
+                <div className="education-head">
+                  <p className="education-degree">BCA</p>
+                  <span className="education-year">2020 - 2023</span>
+                </div>
+                <p className="education-school">UIT College Vakkam</p>
+              </div>
+            </article>
+          </div>
+
+          <div className="education-focus">
+            <FaGamepad className="education-focus-icon" />
+            <div>
+              <p className="education-focus-title">Specialization</p>
+              <p className="education-focus-text">Game Development: Unity & C#</p>
+            </div>
+          </div>
+
+          <div className="education-focus">
+            <FaReact className="education-focus-icon" />
+            <div>
+              <p className="education-focus-title">Specialization</p>
+              <p className="education-focus-text">MERN Stack: MongoDB, Express, React, Node.js</p>
+            </div>
+          </div>
         </div>
 
         <div className="card">
           <h3>Certificates</h3>
           <div className="certificate-list">
-            {certificates.map((certificate) => (
-              <article className="certificate-item" key={certificate.title}>
-                <img className="certificate-image" src={certificate.image} alt={certificate.title} />
+            {certificates.map((certificate) => {
+              const Icon = certificate.icon || FaAward;
 
-                <div className="certificate-content">
-                  <p className="certificate-title">{certificate.title}</p>
-                  <div className="certificate-links">
-                    {certificate.links.map((link) => (
-                      <a key={link.url} href={link.url} target="_blank" rel="noreferrer noopener">
-                        {link.label}
-                      </a>
-                    ))}
+              return (
+                <article className="certificate-item" key={certificate.title}>
+                  <div className="certificate-icon-box" aria-hidden="true">
+                    <Icon className="certificate-icon" />
                   </div>
-                </div>
-              </article>
-            ))}
+
+                  <div className="certificate-content">
+                    <p className="certificate-title">{certificate.title}</p>
+                    <div className="certificate-links">
+                      {certificate.links.map((link) => (
+                        <a key={link.url} href={link.url} target="_blank" rel="noreferrer noopener">
+                          {link.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </div>

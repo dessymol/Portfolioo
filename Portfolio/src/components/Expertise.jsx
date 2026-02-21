@@ -1,4 +1,30 @@
 import React from "react";
+import { FaReact } from "react-icons/fa";
+import { SiMongodb, SiUnity } from "react-icons/si";
+import { MdBuild } from "react-icons/md";
+
+const skillGroups = [
+  {
+    title: "MERN Stack",
+    icon: FaReact,
+    items: ["MongoDB", "Express.js", "React.js", "Node.js"],
+  },
+  {
+    title: "Game Development",
+    icon: SiUnity,
+    items: ["Unity Engine", "C# Scripting", "2D & 3D Mechanics", "Physics & Animation"],
+  },
+  {
+    title: "Database",
+    icon: SiMongodb,
+    items: ["MongoDB", "MySQL"],
+  },
+  {
+    title: "Tools",
+    icon: MdBuild,
+    items: ["Git", "GitHub", "Postman", "VS Code"],
+  },
+];
 
 const Expertise = () => {
   return (
@@ -6,35 +32,25 @@ const Expertise = () => {
       <h2 className="section-title">Technical Skills</h2>
 
       <div className="grid">
+        {skillGroups.map((group) => {
+          const GroupIcon = group.icon;
 
-      <div className="card">
-          <h3>MERN Stack</h3>
-          <p>MongoDB</p>
-          <p>Express.js</p>
-          <p>React.js</p>
-          <p>Node.js</p>
-       </div>
+          return (
+            <div className="card skill-group" key={group.title}>
+              <div className="skill-group-title">
+                <GroupIcon className="skill-group-icon" />
+                <h3>{group.title}</h3>
+              </div>
 
-      <div className="card">
-         <h3>Game Development</h3>
-         <p>Unity</p>
-        <p>C#</p>
-        </div>
-
-     <div className="card">
-        <h3>Database</h3>
-        <p>MongoDB</p>
-       <p>MySQL</p>
-    </div>
-
-     <div className="card">
-       <h3>Tools</h3>
-       <p>Git & GitHub</p>
-       <p>Postman</p>
-       <p>VS Code</p>
-    </div>
-
-  </div>
+              <ul className="skill-bullets">
+                {group.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+          );
+        })}
+      </div>
     </section>
   );
 };
