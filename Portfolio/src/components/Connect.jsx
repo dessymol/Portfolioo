@@ -178,7 +178,7 @@ const ContactSection = () => {
 
 const styles = {
   section: {
-    padding: "80px 20px",
+    padding: "72px 16px",
     backgroundColor: "#F8FAFC",
     display: "flex",
     justifyContent: "center",
@@ -281,16 +281,18 @@ const styles = {
   },
   container: {
     display: "flex",
-    gap: "40px",
+    gap: "24px",
     maxWidth: "1100px",
     width: "100%",
     flexWrap: "wrap",
+    alignItems: "stretch",
   },
   infoCard: {
-    flex: "1",
-    minWidth: "280px",
+    flex: "1 1 280px",
+    minWidth: "0",
+    width: "100%",
     backgroundColor: "#ffffff",
-    padding: "40px",
+    padding: "clamp(20px, 4vw, 40px)",
     borderRadius: "16px",
     boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
   },
@@ -307,10 +309,11 @@ const styles = {
     flexShrink: 0,
   },
   formCard: {
-    flex: "2",
-    minWidth: "320px",
+    flex: "2 1 420px",
+    minWidth: "0",
+    width: "100%",
     backgroundColor: "#ffffff",
-    padding: "40px",
+    padding: "clamp(20px, 4vw, 40px)",
     borderRadius: "16px",
     boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
   },

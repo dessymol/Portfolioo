@@ -474,6 +474,82 @@ h1, h2, h3 {
 }
 
 @media (max-width: 640px) {
+  .section {
+    padding: 64px 20px;
+  }
+
+  .section-title {
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .topbar {
+    padding: 14px 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .nav-links a {
+    margin-left: 0;
+    font-size: 14px;
+  }
+
+  .intro {
+    min-height: auto;
+    padding-top: 110px;
+    background: #f8fafc;
+  }
+
+  .intro-content {
+    flex-direction: column-reverse;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .intro-text h1 {
+    font-size: 38px;
+  }
+
+  .intro-text h2 {
+    font-size: 22px;
+  }
+
+  .intro-text p {
+    font-size: 16px;
+    max-width: none;
+  }
+
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .secondary-btn {
+    margin-right: 0;
+  }
+
+  .intro-image img {
+    width: min(82vw, 320px);
+    height: auto;
+    aspect-ratio: 17 / 20;
+  }
+
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
   .certificate-item {
     flex-direction: column;
   }
@@ -482,7 +558,20 @@ h1, h2, h3 {
     width: 56px;
     height: 56px;
   }
-  
+
+  .footer-content {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 380px) {
+  .intro-text h1 {
+    font-size: 32px;
+  }
+
+  .intro-text h2 {
+    font-size: 19px;
+  }
 }
 
 .site-footer {
