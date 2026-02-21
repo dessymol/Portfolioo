@@ -7,12 +7,12 @@ const Introduction = () => {
       <div className="intro-content">
         <div className="intro-text">
           <h1>Dessymol Dixon</h1>
-          <h2>MERN Stack Developer</h2>
-          <p>
-            Passionate full-stack developer specializing in React, Node.js,
-            Express, and MongoDB. Focused on building scalable and user-friendly
-            web applications.
-          </p>
+          <h2>Full-Stack & Unity Developer</h2>
+         <p>
+          Full-stack developer experienced in the MERN stack and Unity 
+          game development. I build scalable web applications and 
+          interactive real-time experiences using modern technologies.
+        </p>
 
           <div className="buttons">
             <a href="https://www.linkedin.com/in/dessymol-dixon-a56141263" 

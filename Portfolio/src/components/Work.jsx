@@ -7,22 +7,22 @@ const Work = () => {
 
       <div className="grid">
         <div className="card">
-          <h3>Employee Management System</h3>
-          <p> Completed Employee CRUD with EJS and MongoDB operations using MERN stack.</p>
-          <p><strong>Tech:</strong> React, Node, Express, MongoDB</p>
+          <h3>Employee Management System</h3><br/>
+          <p> Completed Employee CRUD with EJS and MongoDB operations using MERN stack.</p><br/>
+          <p><strong>Tech:</strong> React, Node, Express, MongoDB</p><br/>
           <a href="https://github.com/dessymol/Case-Study-Employee-App.git" target="_blank">GitHub</a>
         </div>
 
         <div className="card">
-          <h3>Blog Application</h3>
-          <p>JWT-based user authentication with blog CRUD functionality.</p>
-          <p><strong>Tech:</strong> MERN Stack</p>
+          <h3>Blog Application</h3><br/>
+          <p>JWT-based user authentication with blog CRUD functionality.</p><br/>
+          <p><strong>Tech:</strong> MERN Stack</p><br/>
           <a href="https://github.com/dessymol/Blog-App.git" target="_blank">GitHub</a>
         </div>
          <div className="card">
-          <h3>City central Library</h3>
-          <p>HTML bsaed library UI designing.</p>
-          <p><strong>Tech:</strong>HTML</p>
+          <h3>City central Library</h3><br/>
+          <p>HTML bsaed library UI designing.</p><br/>
+          <p><strong>Tech:</strong>HTML</p><br/>
           <a href="https://github.com/dessymol/City-Central-Library.git" target="_blank">GitHub</a>
         </div>
       </div>
