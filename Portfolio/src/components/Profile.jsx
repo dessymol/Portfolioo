@@ -83,7 +83,7 @@ const Profile = () => {
                   <p className="education-degree">BCA</p>
                   <span className="education-year">2020 - 2023</span>
                 </div>
-                <p className="education-school">UIT College Vakkam</p>
+                <p className="education-school">UIT College Vakkom</p>
               </div>
             </article>
           </div>
