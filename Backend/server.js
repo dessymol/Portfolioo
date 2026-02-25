@@ -25,6 +25,7 @@ app.use(cors({
   allowedHeaders: ['Content-Type', 'Authorization'],
   optionsSuccessStatus: 200
 }));
+app.options('*', cors());
 app.use(express.json());
 
 if (process.env.MONGO_URI) {
@@ -37,5 +38,5 @@ if (process.env.MONGO_URI) {
 
 app.use("/api/contact", contactRoutes);
 
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
