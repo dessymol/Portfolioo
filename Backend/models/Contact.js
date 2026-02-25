@@ -5,7 +5,9 @@ const contactSchema = new mongoose.Schema(
     name: {
       type: String,
       required: true,
-      match: [/^[A-Za-z\s]+$/, "Name should contain only letters"],
+      minlength: [2, 'Name must be at least 2 characters'],
+      maxlength: [50, 'Name can be at most 50 characters'],
+      trim: true,
     },
     email: {
       type: String,

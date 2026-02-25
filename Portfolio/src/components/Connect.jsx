@@ -30,10 +30,10 @@ const ContactSection = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!/^[A-Za-z\s.'-]{2,50}$/.test(form.name)) {
-  setError("Please enter a valid name");
-  return;
-}
+    if (!/^.{2,50}$/u.test(form.name.trim())) {
+      setError("Please enter a valid name (2-50 characters)");
+      return;
+    }
 
     if (!/\S+@\S+\.\S+/.test(form.email)) {
       setError("Enter valid email address");
@@ -42,11 +42,10 @@ const ContactSection = () => {
 
    
 
+    const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
+
     try {
-      const res = await axios.post(
-        "http://localhost:5000/api/contact",
-        form
-      );
+      const res = await axios.post(`${API_URL}/api/contact`, form);
 
       setSuccess(res.data.message);
       setForm({ name: "", email: "", message: "" });
@@ -56,11 +55,12 @@ const ContactSection = () => {
       }, 3000);
 
     } catch (err) {
-      setError(
-        err.response?.data?.errors?.join(", ") ||
-        "Something went wrong"
-      );
-       setTimeout(() => setError(""), 3000);
+      if (!err.response) {
+        setError("Server unreachable. Is the backend running at " + API_URL + "?");
+      } else {
+        setError(err.response?.data?.errors?.join(", ") || "Something went wrong");
+      }
+      setTimeout(() => setError(""), 3000);
     }
   };
 
