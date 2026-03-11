@@ -7,7 +7,7 @@ const contactRoutes = require("./Routes/contactRoutes");
 
 const app = express();
 
-// CORS configuration
+// CORS (only once)
 app.use(
   cors({
     origin: [
@@ -16,20 +16,8 @@ app.use(
     ],
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type"],
-    credentials: true
   })
 );
-
-// IMPORTANT: handle preflight requests
-const cors = require("cors");
-
-app.use(
-  cors({
-    origin: "*",
-    methods: ["GET", "POST", "OPTIONS"],
-  })
-);
-
 
 app.use(express.json());
 
