@@ -16,8 +16,12 @@ app.use(
     ],
     methods: ["GET", "POST", "OPTIONS"],
     allowedHeaders: ["Content-Type"],
+    credentials: true
   })
 );
+
+// IMPORTANT: handle preflight requests
+app.options("*", cors());
 
 app.use(express.json());
 
@@ -30,7 +34,6 @@ if (process.env.MONGO_URI) {
 
 app.use("/api/contact", contactRoutes);
 
-// IMPORTANT for Render
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
