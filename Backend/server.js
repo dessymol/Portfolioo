@@ -21,7 +21,15 @@ app.use(
 );
 
 // IMPORTANT: handle preflight requests
-app.options("*", cors());
+const cors = require("cors");
+
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "OPTIONS"],
+  })
+);
+
 
 app.use(express.json());
 
