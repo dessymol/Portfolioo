@@ -5,31 +5,21 @@ require("dotenv").config();
 
 const contactRoutes = require("./Routes/contactRoutes");
 
+
 const app = express();
 
-// CORS (only once)
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://dessyportfolio.onrender.com"
-    ],
-    methods: ["GET", "POST", "OPTIONS"],
-    allowedHeaders: ["Content-Type"],
-  })
-);
-
+app.use(cors());
 app.use(express.json());
 
 if (process.env.MONGO_URI) {
-  mongoose
-    .connect(process.env.MONGO_URI)
+  mongoose.connect(process.env.MONGO_URI)
     .then(() => console.log("MongoDB Connected"))
-    .catch((err) => console.log("MongoDB connection error:", err));
+    .catch(err => console.log("MongoDB connection error:", err));
+} else {
+  console.warn("MONGO_URI not set; skipping MongoDB connection. Create a .env with MONGO_URI to enable DB.");
 }
 
 app.use("/api/contact", contactRoutes);
 
-const PORT = process.env.PORT || 5000;
-
+const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
