@@ -56,7 +56,7 @@ const ContactSection = () => {
 
     } catch (err) {
       if (!err.response) {
-        setError("Network error: Please check your connection and try again");
+        setError("Server unreachable. Is the backend running at " + API_URL + "?");
       } else {
         setError(err.response?.data?.errors?.join(", ") || "Something went wrong");
       }
